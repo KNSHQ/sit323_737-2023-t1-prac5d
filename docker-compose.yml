@@ -1,0 +1,19 @@
+version: '1.1'
+services:
+  service1:
+    build: ./service1
+    ports:
+      - "3000:3000"
+    networks:
+      - mynetwork
+
+  service2:
+    build: ./service2
+    ports:
+      - "4000:4000"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
